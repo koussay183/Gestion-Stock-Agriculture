@@ -30,7 +30,7 @@
   text-decoration: none;
   background-color: #f3a738;
   color: #2d1e2f;
-  font-size: 1.1em;
+  font-size: 1em;
   padding: 1em 2em;
   margin: 0 0.5em;
   border-radius: 50px;
@@ -193,6 +193,104 @@
   width: 100%;
   max-width: 500px;
   background-color: white;
+}
+
+.LoginPage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 1em;
+}
+
+.allFormHolder {
+  width: 100%;
+  max-width: 400px;
+  background-color: #f3a738;
+  border-radius: 10px;
+  padding: 1em;
+}
+.allFormHolder h1 {
+  text-align: center;
+}
+.allFormHolder form {
+  width: 100%;
+}
+.allFormHolder form > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+.allFormHolder form > div input {
+  outline: none;
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+}
+.allFormHolder form > div label {
+  padding-left: 0.1em;
+  padding-bottom: 0.2em;
+}
+.allFormHolder form button {
+  background-color: white;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  border-radius: 10px;
+  padding: 1em;
+}
+.allFormHolder p {
+  text-align: center;
+}
+
+.bb {
+  text-align: center;
+  margin-top: 1em;
+  display: block;
+}
+
+.ErrorMessage {
+  color: red;
+  width: 100%;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.SignupPage {
+  padding-top: 10em;
+  justify-content: start;
+}
+
+.NavBarInnerForms {
+  width: 100%;
+  position: absolute;
+  top: 1.5em;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.NavBarInnerForms > p {
+  color: #f3a738;
+  font-size: 2em;
+  margin: 0;
+}
+.NavBarInnerForms .innerNavBarMenu a {
+  text-decoration: none;
+  background-color: #f3a738;
+  color: #2d1e2f;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin: 0 0.5em;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+.NavBarInnerForms .innerNavBarMenu a:hover {
+  background-color: #c4ffb0;
 }
 
 * {

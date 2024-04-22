@@ -12,6 +12,8 @@ function Home() {
           <div className="innerNavBarMenu">
             <Link to={"/register"}>Signup</Link>
             <Link to={"/login"}>Login</Link>
+            <a href='#AboutUs'>About Us</a>
+            <a href='#ContactUs'>Contact Us</a>
           </div>
         </div>
         <div className='CTAHolder'>
@@ -20,7 +22,7 @@ function Home() {
         </div>
       </div>
       
-      <div className='AboutUs' style={{backgroundImage : `url(${bg2})`}}>
+      <div className='AboutUs' id='AboutUs' style={{backgroundImage : `url(${bg2})`}}>
         <div className='innerAboutUsTextHolder' >
           <h1>About Us</h1>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. galley of type and scshas survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
@@ -28,7 +30,7 @@ function Home() {
         <img src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4' alt='myapp'></img>
       </div>
 
-      <div className='ContactUs' >
+      <div className='ContactUs' id='ContactUs'>
         
         <form className="inputsHolderInsideContact" style={{backgroundImage : `url(${bg})`}}>
           <h1>Contact Us</h1>

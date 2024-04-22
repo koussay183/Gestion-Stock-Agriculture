@@ -1,0 +1,100 @@
+.LoginPage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 1em;
+}
+
+.allFormHolder {
+    width: 100%;
+    max-width: 400px;
+    background-color: $mainColor;
+    border-radius: 10px;
+    padding: 1em;
+    h1 {
+        text-align: center;
+
+    }
+    form {
+        width: 100%;
+        &>div {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1em;
+            input{
+                outline: none;
+                border: none;
+                padding: 1em;
+                border-radius: 10px;
+            }
+            label {
+                padding-left: .1em;
+                padding-bottom: .2em;
+            }
+        }
+        button {
+            background-color: white;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            border-radius: 10px;
+            padding: 1em;
+        }
+    }
+    p{
+        text-align: center;
+    }
+}
+
+.bb {
+    text-align: center;
+    margin-top: 1em;
+    display: block;
+}
+
+.ErrorMessage {
+    color: red;
+    width: 100%;
+    text-align: center;
+    margin: .5em 0;
+}
+
+.SignupPage {
+    padding-top: 10em;
+    justify-content: start;
+}
+
+.NavBarInnerForms {
+    width: 100%;
+    position: absolute;
+    top: 1.5em;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &>p{
+        color: $mainColor;
+        font-size: 2em;
+        margin: 0;
+    }
+    .innerNavBarMenu {
+        a {
+            text-decoration: none;
+            background-color: $mainColor;
+            color: $sColor;
+            font-size: 1em;
+            padding: 1em 2em;
+            margin: 0 .5em;
+            border-radius: 50px;
+            transition: background-color .3s ease;
+            &:hover{
+                background-color: $lastColor;
+            }
+        }
+    }
+}

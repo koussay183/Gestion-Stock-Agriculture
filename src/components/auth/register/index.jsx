@@ -36,14 +36,17 @@ const Register = () => {
         <>
             {userLoggedIn && (<Navigate to={'/dashboard'} replace={true} />)}
 
-            <main className="w-full h-screen flex self-center place-content-center place-items-center">
-                <div className="w-96 text-gray-600 space-y-5 p-4 shadow-xl border rounded-xl">
-                    <div className="text-center mb-6">
-                        <div className="mt-2">
-                            <h3 className="text-gray-800 text-xl font-semibold sm:text-2xl">Create a New Account</h3>
-                        </div>
-
+            <main className="LoginPage SignupPage" style={{justifyContent : "start"}}>
+                <div className='NavBarInnerForms'>
+                    <p>Logo.</p>
+                    <div className="innerNavBarMenu">
+                        <Link to={"/register"}>Signup</Link>
+                        <Link to={"/login"}>Login</Link>
+                        <Link to={"/"}>Home</Link>
                     </div>
+                </div>
+                <div className="allFormHolder">
+                    <h1>Create a New Account</h1>
                     <form
                         onSubmit={onSubmit}
                         className="space-y-4"
@@ -155,10 +158,10 @@ const Register = () => {
                         >
                             {isRegistering ? 'Signing Up...' : 'Sign Up'}
                         </button>
-                        <div className="text-sm text-center">
+                        <span className="bb">
                             Already have an account? {'   '}
                             <Link to={'/login'} className="text-center text-sm hover:underline font-bold">Continue</Link>
-                        </div>
+                        </span>
                     </form>
                 </div>
             </main>
