@@ -40,100 +40,114 @@ const Register = () => {
                 <div className='NavBarInnerForms'>
                     <p>Logo.</p>
                     <div className="innerNavBarMenu">
-                        <Link to={"/register"}>Signup</Link>
                         <Link to={"/login"}>Login</Link>
                         <Link to={"/"}>Home</Link>
                     </div>
                 </div>
-                <div className="allFormHolder">
+                <div className="allFormHolder SignUpallFormHolder">
                     <h1>Create a New Account</h1>
                     <form
                         onSubmit={onSubmit}
                         className="space-y-4"
                     >
-                        <div>
-                            <label className="text-sm text-gray-600 font-bold">
-                                Email
-                            </label>
-                            <input
-                                type="email"
-                                autoComplete='email'
-                                required
-                                value={email} onChange={(e) => { setEmail(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:indigo-600 shadow-sm rounded-lg transition duration-300"
-                            />
-                        </div>
+                        
 
-                        <div>
-                            <label className="text-sm text-gray-600 font-bold">
-                                Password
-                            </label>
-                            <input
-                                disabled={isRegistering}
-                                type="password"
-                                autoComplete='new-password'
-                                required
-                                value={password} onChange={(e) => { setPassword(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
-                            />
-                        </div>
+                        <span className="bothHolder">
+                            <div className='inputGroup'>
+                                <label className="text-sm text-gray-600 font-bold">
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    autoComplete='email'
+                                    placeholder='Email'
+                                    required
+                                    value={email} onChange={(e) => { setEmail(e.target.value) }}
+                                    className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:indigo-600 shadow-sm rounded-lg transition duration-300"
+                                />
+                            </div>
+                            <div className='inputGroup'>
+                                <label className="text-sm text-gray-600 font-bold">
+                                    Full Name
+                                </label>
+                                <input
+                                    disabled={isRegistering}
+                                    type="text"
+                                    autoComplete='off'
+                                    placeholder='Full Name'
+                                    required
+                                    value={fullName} onChange={(e) => { setfullName(e.target.value) }}
+                                    className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                />
+                            </div>
+                        </span>
+                              
+                        
+                        <span className="bothHolder">
+                            <div className='inputGroup'>
+                                <label className="text-sm text-gray-600 font-bold">
+                                    Password
+                                </label>
+                                <input
+                                    disabled={isRegistering}
+                                    type="password"
+                                    autoComplete='new-password'
+                                    required
+                                    placeholder='Password'
+                                    value={password} onChange={(e) => { setPassword(e.target.value) }}
+                                    className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                />
+                            </div>
+                            <div className='inputGroup'>
+                                <label className="text-sm text-gray-600 font-bold">
+                                    Confirm Password
+                                </label>
+                                <input
+                                    disabled={isRegistering}
+                                    type="password"
+                                    autoComplete='off'
+                                    placeholder='Confirm Password'
+                                    required
+                                    value={confirmPassword} onChange={(e) => { setconfirmPassword(e.target.value) }}
+                                    className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                />
+                            </div>
+                        </span>
+                        
+                        
+                        <span className="bothHolder">
+                            <div className='inputGroup'>
+                                <label className="text-sm text-gray-600 font-bold">
+                                    City
+                                </label>
+                                <input
+                                    disabled={isRegistering}
+                                    type="text"
+                                    autoComplete='off'
+                                    required
+                                    placeholder='City'
+                                    value={ville} onChange={(e) => { setville(e.target.value) }}
+                                    className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                />
+                            </div>
+                            
+                            <div className='inputGroup'>
+                                <label className="text-sm text-gray-600 font-bold">
+                                    Country
+                                </label>
+                                <input
+                                    disabled={isRegistering}
+                                    type="text"
+                                    autoComplete='off'
+                                    placeholder='Country'
+                                    required
+                                    value={pays} onChange={(e) => { setpays(e.target.value) }}
+                                    className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                />
+                            </div>
+                        </span>
 
-                        <div>
-                            <label className="text-sm text-gray-600 font-bold">
-                                Confirm Password
-                            </label>
-                            <input
-                                disabled={isRegistering}
-                                type="password"
-                                autoComplete='off'
-                                required
-                                value={confirmPassword} onChange={(e) => { setconfirmPassword(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
-                            />
-                        </div>
-                        
-                        <div>
-                            <label className="text-sm text-gray-600 font-bold">
-                                Full Name
-                            </label>
-                            <input
-                                disabled={isRegistering}
-                                type="text"
-                                autoComplete='off'
-                                required
-                                value={fullName} onChange={(e) => { setfullName(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
-                            />
-                        </div>
-                        
-                        <div>
-                            <label className="text-sm text-gray-600 font-bold">
-                                City
-                            </label>
-                            <input
-                                disabled={isRegistering}
-                                type="text"
-                                autoComplete='off'
-                                required
-                                value={ville} onChange={(e) => { setville(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
-                            />
-                        </div>
-                        
-                        <div>
-                            <label className="text-sm text-gray-600 font-bold">
-                                Country
-                            </label>
-                            <input
-                                disabled={isRegistering}
-                                type="text"
-                                autoComplete='off'
-                                required
-                                value={pays} onChange={(e) => { setpays(e.target.value) }}
-                                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
-                            />
-                        </div>
-                        <div>
+                        <div className='inputGroup'>
                             <label className="text-sm text-gray-600 font-bold">
                                 Currency
                             </label>
@@ -142,6 +156,7 @@ const Register = () => {
                                 type="text"
                                 autoComplete='off'
                                 required
+                                placeholder='Currency'
                                 value={devise} onChange={(e) => { setdevise(e.target.value) }}
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
                             />
@@ -156,7 +171,7 @@ const Register = () => {
                             disabled={isRegistering}
                             className={`w-full px-4 py-2 text-white font-medium rounded-lg ${isRegistering ? 'bg-gray-300 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 hover:shadow-xl transition duration-300'}`}
                         >
-                            {isRegistering ? 'Signing Up...' : 'Sign Up'}
+                            {isRegistering ? 'Signing Up...' : 'Register'}
                         </button>
                         <span className="bb">
                             Already have an account? {'   '}

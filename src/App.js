@@ -13,10 +13,10 @@ import { useAuth } from './contexts/authContext'
 function UserPrivateRoutes() {
   const { userLoggedIn } = useAuth();
   return userLoggedIn ? (
-    <>
-      <SideBar/>
+    <div className="userDash">
+      <SideBar />
       <Outlet/>
-    </>
+    </div>
   ) : (<Navigate to="/login" replace={true}/>)
 }
 
@@ -31,8 +31,8 @@ function App() {
 
           {/* User Private Routes */}
           <Route path="/dashboard" element={<UserPrivateRoutes />} >
-            <Route path="*" index element={<h1>Statics</h1>}/>
-            <Route path="calendar" index element={<h1>Calendar</h1>}/>
+            <Route path="*" index element={<h1>Statics Page</h1>}/>
+            <Route path="calendar" index element={<h1>Calendar Page</h1>}/>
           </Route>
 
           {/* User Public Routes */}

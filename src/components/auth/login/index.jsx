@@ -14,9 +14,14 @@ const Login = () => {
     const onSubmit = async (e) => {
         e.preventDefault()
         if(!isSigningIn) {
-            setIsSigningIn(true)
-            await doSignInWithEmailAndPassword(email, password)
-            doSendEmailVerification()
+            try {
+                setIsSigningIn(true)
+                await doSignInWithEmailAndPassword(email, password)
+                doSendEmailVerification()
+            } catch (error) {
+                setErrorMessage("Wrong Email Or Password !")
+                setIsSigningIn(false)
+            }
         }
     }
 
@@ -29,8 +34,7 @@ const Login = () => {
             <div className='NavBarInnerForms'>
                     <p>Logo.</p>
                     <div className="innerNavBarMenu">
-                        <Link to={"/register"}>Signup</Link>
-                        <Link to={"/login"}>Login</Link>
+                        <Link to={"/register"}>Register</Link>
                         <Link to={"/"}>Home</Link>
                     </div>
                 </div>
@@ -77,10 +81,10 @@ const Login = () => {
                             disabled={isSigningIn}
                             className={`w-full px-4 py-2 text-white font-medium rounded-lg ${isSigningIn ? 'bg-gray-300 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 hover:shadow-xl transition duration-300'}`}
                         >
-                            {isSigningIn ? 'Signing In...' : 'Sign In'}
+                            {isSigningIn ? 'Signing In...' : 'Login'}
                         </button>
                     </form>
-                    <p>Don't have an account? <Link to={'/register'} className="hover:underline font-bold">Sign up</Link></p>
+                    <p>Don't have an account? <Link to={'/register'} className="hover:underline font-bold">Register</Link></p>
                 </div>
             </main>
         </div>
