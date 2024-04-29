@@ -12,11 +12,12 @@ import { IoMdHelp } from "react-icons/io";
 
 import { doc , getDoc} from 'firebase/firestore';
 import { firestore } from '../firebase/firebase';
+import { useNavigate } from 'react-router-dom';
 
 function SideBar() {
   const { currentUser } = useAuth();
   const [userData, setUserData] = useState({});
- 
+  const navigate = useNavigate()
   useEffect(() => {
     const fetchUserData = async () => {
       if(currentUser){
@@ -43,9 +44,9 @@ function SideBar() {
       <div className='insideSideHolderLinks'>
         <div><MdOutlineInsights /> Statics</div>
         <div><SlCalender /> Calender</div>
-        <div><GoPackage /> Stock</div>
+        <div onClick={()=>navigate("/dashboard/stock")}><GoPackage /> Stock</div>
         <div><GrTransaction/> Transactions</div>
-        <div><CgProfile/> Profile</div>
+        <div onClick={()=>navigate("/dashboard/profile")}><CgProfile/> Profile</div>
         <div><IoMdHelp/> Help</div>
       </div>
       <button onClick={doSignOut} className='logoutBtn'>Logout</button>

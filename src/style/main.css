@@ -402,26 +402,6 @@
   padding: 0.5em;
   position: relative;
 }
-.UserSideBar .iconHolder {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  padding: 0 0.5em;
-}
-.UserSideBar .iconHolder .UsericonInSideBar {
-  background-color: #c4ffb0;
-  padding: 0.8em;
-  font-size: 0.9em;
-  border-radius: 10px;
-  text-transform: capitalize;
-  margin-right: 0.5em;
-}
-.UserSideBar .iconHolder .UserNameInSideBar {
-  color: white;
-  padding-left: 0.3em;
-  text-transform: capitalize;
-}
 .UserSideBar .insideSideHolderLinks {
   width: 100%;
   display: flex;
@@ -471,6 +451,27 @@
 }
 .UserSideBar .logoutBtn:hover {
   background-color: #aa0b1b;
+}
+
+.iconHolder {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0 0.5em;
+}
+.iconHolder .UsericonInSideBar {
+  background-color: #c4ffb0;
+  padding: 0.8em;
+  font-size: 0.9em;
+  border-radius: 10px;
+  text-transform: capitalize;
+  margin-right: 0.5em;
+}
+.iconHolder .UserNameInSideBar {
+  color: white;
+  padding-left: 0.3em;
+  text-transform: capitalize;
 }
 
 html {

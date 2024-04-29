@@ -9,6 +9,11 @@ import AdminLogin from "./Admin/AdminLogin"
 import { AuthProvider } from "./contexts/authContext";
 import { BrowserRouter as Router, Routes, Route, Outlet , Navigate } from 'react-router-dom';
 import { useAuth } from './contexts/authContext'
+import Profile from "./components/Profile";
+import ChangeProfile from "./components/ChangeProfile";
+import ChnagePassword from "./components/ChnagePassword";
+import Stock from "./components/Stock";
+import AddToStock from "./components/AddToStock";
 
 function UserPrivateRoutes() {
   const { userLoggedIn } = useAuth();
@@ -32,7 +37,13 @@ function App() {
           {/* User Private Routes */}
           <Route path="/dashboard" element={<UserPrivateRoutes />} >
             <Route path="*" index element={<h1>Statics Page</h1>}/>
-            <Route path="calendar" index element={<h1>Calendar Page</h1>}/>
+
+            <Route path="profile" index element={<Profile/>}/>
+            <Route path="chnage-password" index element={<ChnagePassword/>}/>
+            <Route path="chnage-profile" index element={<ChangeProfile/>}/>
+            
+            <Route path="stock" index element={<Stock/>}/>
+            <Route path="add-to-stock" index element={<AddToStock/>}/>
           </Route>
 
           {/* User Public Routes */}

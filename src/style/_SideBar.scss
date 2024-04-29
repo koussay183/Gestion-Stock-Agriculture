@@ -10,26 +10,7 @@
     overflow: hidden;
     padding: .5em;
     position: relative;
-    .iconHolder{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        padding: 0 .5em;
-        .UsericonInSideBar{
-            background-color: $lastColor;
-            padding: .8em;
-            font-size: .9em;
-            border-radius: 10px;
-            text-transform: capitalize;
-            margin-right: .5em;
-        }
-        .UserNameInSideBar{
-            color: $mainColor;
-            padding-left: .3em;
-            text-transform: capitalize;
-        }
-    }
+    
     .insideSideHolderLinks{
         width: 100%;
         display: flex;
@@ -80,5 +61,26 @@
         &:hover{
             background-color: #aa0b1b;  
         }
+    }
+}
+
+.iconHolder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 .5em;
+    .UsericonInSideBar{
+        background-color: $lastColor;
+        padding: .8em;
+        font-size: .9em;
+        border-radius: 10px;
+        text-transform: capitalize;
+        margin-right: .5em;
+    }
+    .UserNameInSideBar{
+        color: $mainColor;
+        padding-left: .3em;
+        text-transform: capitalize;
     }
 }

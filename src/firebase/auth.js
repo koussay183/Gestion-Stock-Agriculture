@@ -6,7 +6,13 @@ import {
   sendPasswordResetEmail,
   sendEmailVerification,
   updatePassword,
+  updateEmail,
+  verifyBeforeUpdateEmail,
+  getAuth,
+  reauthenticateWithCredential
 } from "firebase/auth";
+import { EmailAuthProvider } from "firebase/auth/cordova";
+
 
 import { doc, setDoc } from "firebase/firestore";
 
@@ -53,10 +59,50 @@ export const doPasswordReset = (email) => {
   return sendPasswordResetEmail(auth, email);
 };
 
-export const doPasswordChange = (password) => {
-  return updatePassword(auth.currentUser, password);
-};
+export const doPasswordChange = async (password,newPassword) => {
+  const {currentUser} = getAuth()
+  try {
+    // Reauthenticate user
+    const credential = EmailAuthProvider.credential(
+        currentUser.email,
+        password
+    );
 
+    await reauthenticateWithCredential(currentUser, credential);
+
+    // Sign in again with email and password
+    const userCredential = await signInWithEmailAndPassword(currentUser.auth, currentUser.email, password);
+
+    // Update email address
+    await updatePassword(userCredential.user, newPassword);
+
+    return { success: true, message: 'Password updated successfully!' };
+} catch (error) {
+    return { success: false, message: error.message };
+}
+};
+export const doEmailChange = async (email,password) => {
+  const {currentUser} = getAuth()
+  try {
+    // Reauthenticate user
+    const credential = EmailAuthProvider.credential(
+        currentUser.email,
+        password
+    );
+
+    await reauthenticateWithCredential(currentUser, credential);
+
+    // Sign in again with email and password
+    const userCredential = await signInWithEmailAndPassword(currentUser.auth, currentUser.email, password);
+
+    // Update email address
+    await updateEmail(userCredential.user, email);
+
+    return { success: true, message: 'Email address updated successfully!' };
+} catch (error) {
+    return { success: false, message: error.message };
+}
+};
 export const doSendEmailVerification = () => {
   return sendEmailVerification(auth.currentUser, {
     url: `${window.location.origin}/dashboard`,
