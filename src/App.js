@@ -14,6 +14,7 @@ import ChangeProfile from "./components/ChangeProfile";
 import ChnagePassword from "./components/ChnagePassword";
 import Stock from "./components/Stock";
 import AddToStock from "./components/AddToStock";
+import ForgotPassword from "./components/ForgotPassword";
 
 function UserPrivateRoutes() {
   const { userLoggedIn } = useAuth();
@@ -49,7 +50,7 @@ function App() {
           {/* User Public Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           {/* Define a default route */}
           <Route path="*" element={<Home />} />
         </Routes>

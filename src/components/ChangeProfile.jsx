@@ -5,7 +5,7 @@ import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { firestore } from '../firebase/firebase';
 import { useAuth } from '../contexts/authContext';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { MdPublishedWithChanges } from "react-icons/md";
 function ChangeProfile() {
     const navigate = useNavigate()
     const { currentUser } = useAuth();
@@ -78,27 +78,41 @@ function ChangeProfile() {
             theme="light"
             transition={"Bounce"}
             />
-            <ToastContainer />
+            <h1><MdPublishedWithChanges/></h1>
+            <span className='shades' id='shade1'></span>
+            <span className='shades' id='shade2'></span>
             <div className="modifyInfosHolder">
                 <div>
-                    <label>Full Name</label>
-                    <input type="text" placeholder={userData?.fullName} id='fullName' onChange={handleInputChange} />
+                    <div>
+                        <label>Full Name</label>
+                        <input type="text" placeholder={userData?.fullName} id='fullName' onChange={handleInputChange} />
+                    </div>
+                    
                 </div>
                 <div>
-                    <label>Phone Number</label>
-                    <input type="text" placeholder={userData?.phoneNumber} id='phoneNumber' onChange={handleInputChange} />
+                <div>
+                        <label>Phone Number</label>
+                        <input type="text" placeholder={userData?.phoneNumber} id='phoneNumber' onChange={handleInputChange} />
+                    </div>
                 </div>
                 <div>
-                    <label>Country</label>
-                    <input type="text" placeholder={userData?.pays} id='pays' onChange={handleInputChange} />
+                <div>
+                        <label>Country</label>
+                        <input type="text" placeholder={userData?.pays} id='pays' onChange={handleInputChange} />
+                    </div>
                 </div>
                 <div>
-                    <label>City</label>
-                    <input type="text" placeholder={userData?.ville} id='ville' onChange={handleInputChange} />
+                    
+                    <div>
+                        <label>City</label>
+                        <input type="text" placeholder={userData?.ville} id='ville' onChange={handleInputChange} />
+                    </div>
                 </div>
+                <div>
                 <div>
                     <label>Devise</label>
                     <input type="text" placeholder={userData?.devise} id='devise' onChange={handleInputChange} />
+                </div>
                 </div>
             </div>
             <div className='navigationFromChange'>

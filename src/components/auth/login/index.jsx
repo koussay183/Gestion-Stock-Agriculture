@@ -84,7 +84,10 @@ const Login = () => {
                             {isSigningIn ? 'Signing In...' : 'Login'}
                         </button>
                     </form>
+                    <p>Forgot Your Password ? <Link to={'/forgot-password'} className="hover:underline font-bold">Restore</Link></p>
                     <p>Don't have an account? <Link to={'/register'} className="hover:underline font-bold">Register</Link></p>
+                    
+                        
                 </div>
             </main>
         </div>

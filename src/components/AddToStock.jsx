@@ -49,7 +49,19 @@ function AddToStock() {
 
     return (
         <div className='AddToStock'>
-            <ToastContainer />
+            <ToastContainer
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+      transition={"Bounce"}
+      />
             <div className="addToStockForm">
                 <div>
                     <label htmlFor="date">Date</label>

@@ -9,6 +9,7 @@ $lastColor : #c4ffb0;
 @import "Home";
 @import "LoginPage";
 @import "SideBar";
+@import "Profile"; 
 html {
     scroll-behavior: smooth;
 }
@@ -25,3 +26,17 @@ body {
 
 
 
+.Loader {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    background-color: $sColor;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $lastColor;
+    font-size: 2em;
+}

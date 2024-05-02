@@ -52,7 +52,11 @@ function Stock() {
     };
 
     const handleInputChange = (e) => {
-        setSearchTerm(e.target.value);
+        const { id, value } = e.target;
+        setEditedMovement(prevMovement => ({
+            ...prevMovement,
+            [id]: value
+        }));
     };
 
     const handleFilterChange = (e) => {
@@ -71,7 +75,7 @@ function Stock() {
                     <input
                         placeholder={`Search by ${filterType}`}
                         value={searchTerm}
-                        onChange={handleInputChange}
+                        onChange={(e) => setSearchTerm(e.target.value)}
                     />
                     <label>🔎</label>
                 </div>

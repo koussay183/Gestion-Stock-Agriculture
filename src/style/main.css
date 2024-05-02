@@ -468,10 +468,331 @@
   text-transform: capitalize;
   margin-right: 0.5em;
 }
+.iconHolder .profileImage {
+  border-radius: 10px;
+  margin-right: 0.5em;
+}
 .iconHolder .UserNameInSideBar {
   color: white;
   padding-left: 0.3em;
   text-transform: capitalize;
+}
+
+.ProfilePage {
+  height: 100vh;
+  overflow-y: scroll;
+  width: 100%;
+  scrollbar-width: 0px;
+  position: relative;
+}
+.ProfilePage::-webkit-scrollbar {
+  display: none;
+}
+.ProfilePage .ProfileTitle {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  color: #c4ffb0;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1020;
+}
+.ProfilePage .ProfileTitle svg {
+  margin-right: 0.2em;
+  font-size: 1.1em;
+}
+.ProfilePage .switchBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+}
+.ProfilePage .switchBtn > #subBtn {
+  background-color: transparent;
+  border: 3px solid #1e1020;
+  color: #1e1020;
+  transition: background-color 0.3s ease;
+}
+.ProfilePage .switchBtn > #subBtn:hover {
+  background-color: #1e1020;
+  color: white;
+}
+.ProfilePage .switchBtn button {
+  outline: none;
+  border: none;
+  background-color: #1e1020;
+  color: #c4ffb0;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border: 3px solid #1e1020;
+  margin: 0.5em 0.5em;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 200px;
+}
+.ProfilePage .profileInfoHolder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ProfilePage .profileInfoHolder .iconHolderInsideProfile {
+  margin-bottom: 0;
+}
+.ProfilePage .profileInfoHolder .iconHolderInsideProfile div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ProfilePage .profileInfoHolder .iconHolderInsideProfile div label img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #1e1020;
+}
+.ProfilePage .profileInfoHolder .iconHolderInsideProfile span {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c4ffb0;
+  color: #1e1020;
+  border-radius: 50%;
+  border: 4px solid #1e1020;
+}
+.ProfilePage .profileInfoHolder .userNameInIcon {
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  display: block;
+}
+.ProfilePage .profileInfoHolder .saveBtn {
+  width: 100%;
+  background-color: #1e1020;
+  color: white;
+  border: none;
+  font-size: 0.8em;
+  border-radius: 40px;
+  margin-bottom: 0.5em;
+  margin-top: 0em;
+  padding: 0.7em 1em;
+  cursor: pointer;
+}
+.ProfilePage .profileInfoHolder .textProfileData {
+  width: 100%;
+  max-width: 400px;
+}
+.ProfilePage .profileInfoHolder .textProfileData .changeEmailHolder {
+  font-size: 0.9em;
+  display: flex;
+}
+.ProfilePage .profileInfoHolder .textProfileData .changeEmailHolder input {
+  border: 0;
+  outline: 0;
+  background-color: #1e1020;
+  font-size: 1em;
+  padding: 0.7em 1em;
+  border-radius: 10px;
+  color: white;
+  margin: 0.5em;
+  flex-grow: 1;
+  text-align: center;
+}
+.ProfilePage .profileInfoHolder .textProfileData .changeEmailHolder button {
+  display: none;
+  border: 0;
+  outline: 0;
+  background-color: #1e1020;
+  font-size: 1em;
+  padding: 0.7em 1em;
+  border-radius: 10px;
+  color: white;
+  text-transform: capitalize;
+  margin: 0.5em;
+  cursor: pointer;
+}
+.ProfilePage .profileInfoHolder .textProfileData .infoDivProfile {
+  display: flex;
+}
+.ProfilePage .profileInfoHolder .textProfileData .infoDivProfile div {
+  background-color: #1e1020;
+  margin: 0.5em;
+  flex-grow: 1;
+  color: white;
+  font-size: 0.8em;
+  padding: 0.8em 1em;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ProfilePage .profileInfoHolder .textProfileData .infoDivProfile div label:nth-child(2) {
+  background-color: #c4ffb0;
+  flex-grow: 1;
+  text-align: center;
+  color: #1e1020;
+  margin: 0 0.3em;
+  padding: 0.2em;
+  border-radius: 10px;
+}
+.ProfilePage .profileInfoHolder .textProfileData .infoDivProfile div svg {
+  font-size: 1.2em;
+  margin-right: 0.5em;
+}
+.ProfilePage .navigationFromProfile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+}
+.ProfilePage .navigationFromProfile a {
+  outline: none;
+  border: none;
+  background-color: #1e1020;
+  color: #c4ffb0;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border: 3px solid #1e1020;
+  margin: 0.5em 0.5em;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 200px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.shades {
+  width: 200px;
+  height: 200px;
+  background-color: #c4ffb0;
+  display: block;
+  position: fixed;
+  filter: blur(50px);
+  z-index: -2;
+}
+
+#shade1 {
+  top: -2em;
+  left: 15em;
+}
+
+#shade2 {
+  bottom: -2em;
+  right: -2em;
+}
+
+.ChnagePassword, .ChangeProfile {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.ChnagePassword .passwordChangeHolder, .ChangeProfile .passwordChangeHolder {
+  background-color: #1e1020;
+  padding: 2em;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  padding-bottom: 0.7em;
+}
+.ChnagePassword .passwordChangeHolder div, .ChangeProfile .passwordChangeHolder div {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.9em;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.ChnagePassword .passwordChangeHolder div label, .ChangeProfile .passwordChangeHolder div label {
+  color: #c4ffb0;
+  margin-bottom: 0.2em;
+  padding-left: 0.1em;
+}
+.ChnagePassword .passwordChangeHolder div input, .ChangeProfile .passwordChangeHolder div input {
+  outline: none;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.5em;
+  padding: 1em 1em;
+}
+.ChnagePassword .navigationFromChange, .ChangeProfile .navigationFromChange {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+}
+.ChnagePassword .navigationFromChange a, .ChnagePassword .navigationFromChange button, .ChangeProfile .navigationFromChange a, .ChangeProfile .navigationFromChange button {
+  outline: none;
+  border: none;
+  background-color: #1e1020;
+  color: #c4ffb0;
+  font-size: 1.3em;
+  padding: 0.5em 1em;
+  border: 3px solid #1e1020;
+  margin: 0.5em 0.5em;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 200px;
+  text-decoration: none;
+  text-align: center;
+}
+.ChnagePassword .navigationFromChange button, .ChangeProfile .navigationFromChange button {
+  background-color: #c4ffb0;
+  color: #1e1020;
+}
+.ChnagePassword > h1, .ChangeProfile > h1 {
+  font-size: 5em;
+  margin: 0;
+  margin-top: 0.3em;
+  color: #1e1020;
+}
+
+.modifyInfosHolder {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 600px;
+  background-color: #1e1020;
+  border-radius: 10px;
+  padding: 2em 1.5em;
+  margin-top: 1em;
+}
+.modifyInfosHolder > div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.modifyInfosHolder > div div {
+  width: 100%;
+  display: flex;
+  color: #c4ffb0;
+  margin: 0.5em;
+  align-items: center;
+  justify-content: space-between;
+}
+.modifyInfosHolder > div div input {
+  flex-grow: 1;
+  outline: none;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8em;
+  padding: 1em 1em;
+  margin-left: 0.5em;
+  max-width: 400px;
 }
 
 html {
@@ -486,4 +807,19 @@ html {
 
 body {
   margin: 0;
+}
+
+.Loader {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  background-color: #1e1020;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c4ffb0;
+  font-size: 2em;
 }/*# sourceMappingURL=main.css.map */
