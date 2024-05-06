@@ -11,9 +11,10 @@ import { doc, getDoc } from 'firebase/firestore';
 import { firestore, storage } from '../firebase/firebase';
 import { getDownloadURL, ref } from 'firebase/storage';
 import { useNavigate } from 'react-router-dom';
-
+import Loader from "./Loader"
 function SideBar() {
     const { currentUser } = useAuth();
+    const [loading, setloading] = useState(true)
     const [userData, setUserData] = useState({});
     const [profileImage, setProfileImage] = useState(null);
     const navigate = useNavigate();
@@ -30,9 +31,11 @@ function SideBar() {
                     try {
                         const downloadURL = await getDownloadURL(storageRef);
                         setProfileImage(downloadURL);
+                        
                     } catch (error) {
                         console.log("Profile image not found or error occurred:", error);
                     }
+                    setloading(false)
                 } else {
                     console.log("No such document!");
                 }
@@ -43,6 +46,7 @@ function SideBar() {
 
     return (
         <div className='UserSideBar'>
+            {loading && <Loader/>}
             <h3 className='iconHolder'>
                 {profileImage ? (
                     <>
@@ -60,9 +64,9 @@ function SideBar() {
                 <div><MdOutlineInsights /> Statics</div>
                 <div><SlCalender /> Calendar</div>
                 <div onClick={() => navigate("/dashboard/stock")}><GoPackage /> Stock</div>
-                <div><GrTransaction /> Transactions</div>
+                <div onClick={()=> navigate("/dashboard/transactions")}><GrTransaction /> Transactions</div>
                 <div onClick={() => navigate("/dashboard/profile")}><CgProfile /> Profile</div>
-                <div><IoMdHelp /> Help</div>
+                <div onClick={() => navigate("/dashboard/help")}><IoMdHelp /> Help</div>
             </div>
             <button onClick={doSignOut} className='logoutBtn'>Logout</button>
         </div>

@@ -3,21 +3,26 @@ import { Link } from 'react-router-dom';
 import { collection, query, where, getDocs, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import { firestore } from '../firebase/firebase';
 import { useAuth } from '../contexts/authContext';
-
+import { IoCubeOutline } from "react-icons/io5";
+import { FaSearch } from "react-icons/fa";
+import { IoIosAddCircleOutline } from "react-icons/io";
+import Loader from './Loader';
 function Stock() {
     const { currentUser } = useAuth();
     const [movements, setMovements] = useState([]);
     const [editedMovement, setEditedMovement] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [filterType, setFilterType] = useState('product'); // Default filter type
-
+    const [loading, setloading] = useState(true)
     useEffect(() => {
         const fetchMovements = async () => {
+            
             if (currentUser) {
                 const q = query(collection(firestore, 'movements'), where('user', '==', currentUser.uid));
                 const querySnapshot = await getDocs(q);
                 const movementsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                 setMovements(movementsData);
+                setloading(false)
             }
         };
         fetchMovements();
@@ -69,16 +74,17 @@ function Stock() {
 
     return (
         <div className='Stock'>
-            <Link to="/dashboard/add-to-stock">Add To Stock</Link>
-            <div className='StockHolder'>
-                <div className='searchBarHolderInStock'>
-                    <input
-                        placeholder={`Search by ${filterType}`}
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                    <label>🔎</label>
+            {loading && <Loader/>}
+            <span className='shades' id='shade1'></span>
+        
+            <div className='StockHeader'>
+                <div>
+                    <IoCubeOutline/> Stock
                 </div>
+                <Link to="/dashboard/add-to-stock"><IoIosAddCircleOutline/>Stock</Link>
+            </div>
+
+            <div className='StockHolder'>
                 <div className="filterOptions">
                     <label>
                         <input
@@ -100,6 +106,15 @@ function Stock() {
                     </label>
                     {/* Add more radio buttons for other filter options */}
                 </div>
+                <div className='searchBarHolderInStock'>
+                    <input
+                        placeholder={`Search by ${filterType}`}
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <label><FaSearch/></label>
+                </div>
+                
                 <table>
                     <thead>
                         <tr>
@@ -109,7 +124,7 @@ function Stock() {
                             <th>Quantity</th>
                             <th>Facture Number</th>
                             <th>Note</th>
-                            <th>Actions</th>
+                            <th style={{textAlign : "center"}}>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -121,12 +136,12 @@ function Stock() {
                                 <td>{editedMovement && editedMovement.id === movement.id ? <input type="number" id="quantity" value={editedMovement.quantity} onChange={handleInputChange} /> : movement.quantity}</td>
                                 <td>{editedMovement && editedMovement.id === movement.id ? <input type="text" id="factureNumber" value={editedMovement.factureNumber} onChange={handleInputChange} /> : movement.factureNumber}</td>
                                 <td>{editedMovement && editedMovement.id === movement.id ? <textarea id="note" value={editedMovement.note} onChange={handleInputChange}></textarea> : movement.note}</td>
-                                <td>
+                                <td style={{display : "flex" , justifyContent : 'center'}}>
                                     {editedMovement && editedMovement.id === movement.id ? (
                                         <button onClick={saveMovement}>Save</button>
                                     ) : (
                                         <>
-                                            <button onClick={() => deleteMovement(movement.id)}>Delete</button>
+                                            <button onClick={() => deleteMovement(movement.id)} style={{backgroundColor : '#DC3545',color : "white"}}>Delete</button>
                                             <button onClick={() => editMovement(movement)}>Update</button>
                                         </>
                                     )}

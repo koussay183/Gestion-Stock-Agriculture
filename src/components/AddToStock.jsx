@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { collection, addDoc } from 'firebase/firestore';
 import { firestore } from '../firebase/firebase';
 import { useAuth } from '../contexts/authContext';
+import { IoCubeOutline } from 'react-icons/io5';
+
 
 function AddToStock() {
     const { currentUser } = useAuth();
@@ -50,47 +52,54 @@ function AddToStock() {
     return (
         <div className='AddToStock'>
             <ToastContainer
-      position="top-right"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="light"
-      transition={"Bounce"}
-      />
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                transition={"Bounce"}
+            />
+            <span className='shades' id='shade1'></span>
+            <span className='shades' id='shade2'></span>
+
+            <div className='stockAddHeader'>
+                <IoCubeOutline/> Stock
+            </div>
+            
             <div className="addToStockForm">
                 <div>
                     <label htmlFor="date">Date</label>
-                    <input type="date" id="date" value={formData.date} onChange={handleInputChange} />
+                    <input type="date" id="date" placeholder='Date' value={formData.date} onChange={handleInputChange} />
                 </div>
                 <div>
                     <label htmlFor="product">Product</label>
-                    <input type="text" id="product" value={formData.product} onChange={handleInputChange} />
+                    <input type="text" id="product" placeholder='Type Product' value={formData.product} onChange={handleInputChange} />
                 </div>
                 <div>
                     <label htmlFor="price">Price</label>
-                    <input type="number" id="price" value={formData.price} onChange={handleInputChange} />
+                    <input type="number" id="price" placeholder='Type Price' value={formData.price} onChange={handleInputChange} />
                 </div>
                 <div>
                     <label htmlFor="quantity">Quantity</label>
-                    <input type="number" id="quantity" value={formData.quantity} onChange={handleInputChange} />
+                    <input type="number" id="quantity" placeholder='Type Quantity' value={formData.quantity} onChange={handleInputChange} />
                 </div>
                 <div>
                     <label htmlFor="factureNumber">Facture Number</label>
-                    <input type="text" id="factureNumber" value={formData.factureNumber} onChange={handleInputChange} />
+                    <input type="text" id="factureNumber" placeholder='Type Facture Number' value={formData.factureNumber} onChange={handleInputChange} />
                 </div>
                 <div>
                     <label htmlFor="note">Note</label>
-                    <textarea id="note" value={formData.note} onChange={handleInputChange}></textarea>
+                    <textarea id="note" value={formData.note} placeholder='Type Note' onChange={handleInputChange}></textarea>
                 </div>
             </div>
-            <div>
+            <div className='navigationFromAddToStock'>
                 <Link to="/dashboard/stock">cancel</Link>
-            <button onClick={addToStock}>Add</button>
+            <button onClick={addToStock}>Save</button>
             </div>
         </div>
     )

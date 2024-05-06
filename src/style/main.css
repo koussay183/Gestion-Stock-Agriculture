@@ -795,6 +795,558 @@
   max-width: 400px;
 }
 
+.Stock {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: 0px;
+}
+.Stock::-webkit-scrollbar {
+  display: none;
+}
+
+.StockHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+.StockHeader > div {
+  background-color: #1e1020;
+  padding: 0.7em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 150px;
+  color: #c4ffb0;
+  font-size: 1.2em;
+}
+.StockHeader > div svg {
+  margin-right: 0.3em;
+  font-size: 1.1em;
+}
+.StockHeader a {
+  background-color: #1e1020;
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 150px;
+  color: #c4ffb0;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.StockHeader a svg {
+  font-size: 1.3em;
+  margin-right: 0.2em;
+}
+.StockHeader a:hover {
+  color: #1e1020;
+  background-color: #c4ffb0;
+}
+
+.StockHolder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3em;
+}
+.StockHolder table {
+  width: 100%;
+  max-width: 1050px;
+  border-radius: 20px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.StockHolder th,
+.StockHolder td {
+  padding: 15px;
+  background-color: #1e1020;
+  color: #fff;
+}
+.StockHolder td input {
+  width: 90px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5em;
+}
+.StockHolder td button {
+  background-color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 1em 2em;
+  margin: 0 0.2em;
+  font-size: 0.7em;
+  cursor: pointer;
+}
+.StockHolder th {
+  text-align: left;
+}
+.StockHolder thead th {
+  background-color: #c4ffb0;
+  color: #1e1020;
+}
+.StockHolder tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.StockHolder tbody td {
+  position: relative;
+}
+.StockHolder tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+
+.searchBarHolderInStock {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  border: 4px solid #1e1020;
+  border-radius: 50px;
+  align-items: center;
+  display: flex;
+  padding: 0.6em;
+  padding-left: 1.5em;
+  padding-right: 1em;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+.searchBarHolderInStock input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+.searchBarHolderInStock label {
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  color: #1e1020;
+}
+
+.filterOptions {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+.filterOptions label {
+  background-color: #1e1020;
+  margin: 0.5em;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  border-radius: 20px;
+  color: white;
+  justify-content: center;
+  cursor: pointer;
+}
+.filterOptions label input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+
+.AddToStock {
+  width: 100%;
+  height: 100vh;
+  padding: 1em;
+  overflow-y: scroll;
+}
+.AddToStock::-webkit-scrollbar {
+  display: none;
+}
+.AddToStock .stockAddHeader {
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #c4ffb0;
+  text-align: center;
+  padding: 1em;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  background-color: #1e1020;
+}
+.AddToStock .stockAddHeader svg {
+  margin-right: 0.3em;
+  font-size: 1.2em;
+}
+.AddToStock .addToStockForm {
+  width: 100%;
+  max-width: 400px;
+  padding: 1.5em;
+  border-radius: 30px;
+  background-color: #1e1020;
+  margin: 1em auto;
+}
+.AddToStock .addToStockForm div {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5em;
+}
+.AddToStock .addToStockForm div label {
+  margin-bottom: 0.2em;
+}
+.AddToStock .addToStockForm div input {
+  font-size: 1em;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: 0.5em;
+}
+.AddToStock .addToStockForm div textarea {
+  font-size: 1em;
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: 0.5em;
+}
+.AddToStock .navigationFromAddToStock {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AddToStock .navigationFromAddToStock a {
+  text-decoration: none;
+  background-color: #1e1020;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  margin: 0.5em;
+  text-transform: capitalize;
+  border: 3px solid #1e1020;
+}
+.AddToStock .navigationFromAddToStock button {
+  border: none;
+  outline: none;
+  background-color: #c4ffb0;
+  color: #1e1020;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  font-size: 1em;
+  width: 100px;
+  border: 3px solid #1e1020;
+  cursor: pointer;
+}
+
+.Help {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: 0px;
+  padding: 1em;
+}
+.Help::-webkit-scrollbar {
+  display: none;
+}
+.Help .headerInnerHelp {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.Help .headerInnerHelp label {
+  background-color: #1e1020;
+  color: #c4ffb0;
+  padding: 0.5em 1.5em;
+  border-radius: 10px;
+  margin: 0 0.2em;
+  text-align: center;
+}
+.Help .headerInnerHelp label:nth-child(2) {
+  flex-grow: 1;
+}
+.Help img {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 2em;
+}
+
+.formHolder {
+  width: 100%;
+  max-width: 350px;
+  background-color: #1e1020;
+  margin: 0 auto;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 10px;
+}
+.formHolder div {
+  display: flex;
+  width: 100%;
+  margin-bottom: 0.5em;
+  flex-direction: column;
+}
+.formHolder div label {
+  color: #c4ffb0;
+  margin-bottom: 0.3em;
+}
+.formHolder div input, .formHolder div textarea {
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 1em;
+}
+.formHolder div textarea {
+  resize: none;
+}
+.formHolder button {
+  width: 100%;
+  background-color: #c4ffb0;
+  outline: none;
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+  color: #1e1020;
+  cursor: pointer;
+}
+
+.Transaction {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: 0px;
+  padding: 1em;
+}
+.Transaction::-webkit-scrollbar {
+  display: none;
+}
+.Transaction .TransHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+.Transaction .TransHeader label {
+  background-color: #1e1020;
+  color: #c4ffb0;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.Transaction .TransHeader label svg {
+  margin-right: 0.3em;
+}
+.Transaction .TransHeader > div {
+  display: flex;
+  align-items: center;
+}
+.Transaction .TransHeader > div a {
+  text-decoration: none;
+  background-color: #1e1020;
+  color: #c4ffb0;
+  padding: 0.5em 1em;
+  margin: 0 0.3em;
+  border-radius: 10px;
+  min-width: 120px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+.Transaction .TransHeader > div a:hover {
+  background-color: #c4ffb0;
+  color: #1e1020;
+}
+
+.TransHistory table {
+  width: 100%;
+  max-width: 1050px;
+  border-radius: 20px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-top: 1em;
+}
+.TransHistory th,
+.TransHistory td {
+  padding: 15px;
+  background-color: #1e1020;
+  color: #fff;
+}
+.TransHistory td input {
+  width: 90px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5em;
+}
+.TransHistory td button {
+  background-color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 1em 2em;
+  margin: 0 0.2em;
+  font-size: 0.7em;
+  cursor: pointer;
+}
+.TransHistory th {
+  text-align: left;
+}
+.TransHistory thead th {
+  background-color: #c4ffb0;
+  color: #1e1020;
+}
+.TransHistory tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.TransHistory tbody td {
+  position: relative;
+}
+.TransHistory tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+.TransHistory .SearchContaciner {
+  width: 100%;
+  display: flex;
+  margin-top: 2em;
+  justify-content: center;
+}
+.TransHistory .SearchContaciner input {
+  padding: 0.9em 1em;
+  border-radius: 50px;
+  border: 4px solid #1e1020;
+  flex-grow: 1;
+  max-width: 800px;
+}
+.TransHistory .SearchContaciner select {
+  background-color: #1e1020;
+  outline: none;
+  border-radius: 50px;
+  color: #c4ffb0;
+  border: none;
+  padding: 0 1em;
+  margin: 0 0.5em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.TransHistoryHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4em;
+}
+.TransHistoryHeader .TransHistoryTableChanger {
+  display: flex;
+}
+.TransHistoryHeader .TransHistoryTableChanger button {
+  background-color: #c4ffb0;
+  margin: 0.5em;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  border-radius: 30px;
+  color: #1e1020;
+  justify-content: center;
+  border: none;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+.TransHistoryHeader .TransHistoryTableChanger .activeType {
+  background-color: #1e1020;
+  color: #c4ffb0;
+}
+
+.Sell {
+  width: 100%;
+}
+.Sell .sellAddHeader {
+  margin: 0 auto;
+  width: 200px;
+  background-color: #1e1020;
+  color: #c4ffb0;
+  text-align: center;
+  border-radius: 50px;
+  padding: 0.5em;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+}
+.Sell .sellAddHeader svg {
+  font-size: 1.3em;
+  margin-right: 0.3em;
+}
+.Sell .SellForm {
+  width: 100%;
+  max-width: 500px;
+  background-color: #1e1020;
+  margin: 1em auto;
+  padding: 1em;
+  border-radius: 20px;
+}
+.Sell .SellForm div {
+  display: flex;
+  margin: 0.5em 0;
+  flex-direction: column;
+  justify-content: center;
+}
+.Sell .SellForm div label {
+  color: #c4ffb0;
+  margin-bottom: 0.3em;
+}
+.Sell .SellForm div input, .Sell .SellForm div textarea {
+  flex-grow: 1;
+  border-radius: 10px;
+  margin-left: 0.2em;
+  padding: 1em;
+  border: none;
+}
+.Sell .SellForm button {
+  width: 100%;
+  border-radius: 10px;
+  margin-left: 0.2em;
+  padding: 1em;
+  background-color: #c4ffb0;
+  outline: none;
+  color: #1e1020;
+  border: none;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
 html {
   scroll-behavior: smooth;
 }

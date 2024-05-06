@@ -4,12 +4,12 @@ import { doSignInWithEmailAndPassword , doSendEmailVerification} from '../../../
 import { useAuth } from '../../../contexts/authContext'
 
 const Login = () => {
-    const { userLoggedIn } = useAuth()
+    const { userLoggedIn } = useAuth();
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [isSigningIn, setIsSigningIn] = useState(false)
-    const [errorMessage, setErrorMessage] = useState('')
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isSigningIn, setIsSigningIn] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const onSubmit = async (e) => {
         e.preventDefault()
@@ -87,7 +87,6 @@ const Login = () => {
                     <p>Forgot Your Password ? <Link to={'/forgot-password'} className="hover:underline font-bold">Restore</Link></p>
                     <p>Don't have an account? <Link to={'/register'} className="hover:underline font-bold">Register</Link></p>
                     
-                        
                 </div>
             </main>
         </div>

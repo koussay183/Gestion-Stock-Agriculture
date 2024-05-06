@@ -9,7 +9,10 @@ $lastColor : #c4ffb0;
 @import "Home";
 @import "LoginPage";
 @import "SideBar";
-@import "Profile"; 
+@import "Profile";
+@import "Stock";
+@import "Help";
+@import "Trasaction";
 html {
     scroll-behavior: smooth;
 }

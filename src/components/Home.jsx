@@ -48,8 +48,6 @@ function Home() {
       theme="light"
       transition={"Bounce"}
       />
-      {/* Same as */}
-      <ToastContainer />
       <div className='Hero'>
         <div className='NavBar'>
           <p>Logo.</p>
