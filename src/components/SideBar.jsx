@@ -12,6 +12,7 @@ import { firestore, storage } from '../firebase/firebase';
 import { getDownloadURL, ref } from 'firebase/storage';
 import { useNavigate } from 'react-router-dom';
 import Loader from "./Loader"
+
 function SideBar() {
     const { currentUser } = useAuth();
     const [loading, setloading] = useState(true)
@@ -61,8 +62,8 @@ function SideBar() {
                 )}
             </h3>
             <div className='insideSideHolderLinks'>
-                <div><MdOutlineInsights /> Statics</div>
-                <div><SlCalender /> Calendar</div>
+                <div onClick={() => navigate("/dashboard/statistics")}><MdOutlineInsights /> Statistics</div>
+                <div onClick={() => navigate("/dashboard/calendar")}><SlCalender /> Calendar</div>
                 <div onClick={() => navigate("/dashboard/stock")}><GoPackage /> Stock</div>
                 <div onClick={()=> navigate("/dashboard/transactions")}><GrTransaction /> Transactions</div>
                 <div onClick={() => navigate("/dashboard/profile")}><CgProfile /> Profile</div>

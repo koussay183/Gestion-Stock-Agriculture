@@ -17,7 +17,9 @@ function AddToStock() {
         price: '',
         quantity: '',
         factureNumber: '',
-        note: ''
+        note: '',
+        providerName : '',
+        providerContact : ''
     });
 
     const handleInputChange = (e) => {
@@ -38,7 +40,9 @@ function AddToStock() {
                 quantity: formData.quantity,
                 factureNumber: formData.factureNumber,
                 note: formData.note,
-                user: currentUser.uid
+                user: currentUser.uid,
+                providerName : formData.providerName,
+                providerContact : formData.providerContact
             });
 
             toast.success('Added to stock successfully');
@@ -89,8 +93,12 @@ function AddToStock() {
                     <input type="number" id="quantity" placeholder='Type Quantity' value={formData.quantity} onChange={handleInputChange} />
                 </div>
                 <div>
-                    <label htmlFor="factureNumber">Facture Number</label>
-                    <input type="text" id="factureNumber" placeholder='Type Facture Number' value={formData.factureNumber} onChange={handleInputChange} />
+                    <label htmlFor="providerName">Provider Name</label>
+                    <input type="text" id="providerName" placeholder='Type Provider Name' value={formData.providerName} onChange={handleInputChange} />
+                </div>
+                <div>
+                    <label htmlFor="providerContact">Provider Contact</label>
+                    <input type="text" id="providerContact" placeholder='Type Provider Contact' value={formData.providerContact} onChange={handleInputChange} />
                 </div>
                 <div>
                     <label htmlFor="note">Note</label>

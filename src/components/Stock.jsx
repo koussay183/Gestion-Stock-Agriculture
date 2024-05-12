@@ -122,7 +122,8 @@ function Stock() {
                             <th>Product</th>
                             <th>Price</th>
                             <th>Quantity</th>
-                            <th>Facture Number</th>
+                            <th>Provider Name</th>
+                            <th>Provider Contact</th>
                             <th>Note</th>
                             <th style={{textAlign : "center"}}>Actions</th>
                         </tr>
@@ -134,7 +135,8 @@ function Stock() {
                                 <td>{editedMovement && editedMovement.id === movement.id ? <input type="text" id="product" value={editedMovement.product} onChange={handleInputChange} /> : movement.product}</td>
                                 <td>{editedMovement && editedMovement.id === movement.id ? <input type="number" id="price" value={editedMovement.price} onChange={handleInputChange} /> : movement.price}</td>
                                 <td>{editedMovement && editedMovement.id === movement.id ? <input type="number" id="quantity" value={editedMovement.quantity} onChange={handleInputChange} /> : movement.quantity}</td>
-                                <td>{editedMovement && editedMovement.id === movement.id ? <input type="text" id="factureNumber" value={editedMovement.factureNumber} onChange={handleInputChange} /> : movement.factureNumber}</td>
+                                <td>{editedMovement && editedMovement.id === movement.id ? <input type="text" id="providerName" value={editedMovement.providerName} onChange={handleInputChange} /> : movement.providerName}</td>
+                                <td>{editedMovement && editedMovement.id === movement.id ? <input type="text" id="providerContact" value={editedMovement.providerContact} onChange={handleInputChange} /> : movement.providerContact}</td>
                                 <td>{editedMovement && editedMovement.id === movement.id ? <textarea id="note" value={editedMovement.note} onChange={handleInputChange}></textarea> : movement.note}</td>
                                 <td style={{display : "flex" , justifyContent : 'center'}}>
                                     {editedMovement && editedMovement.id === movement.id ? (

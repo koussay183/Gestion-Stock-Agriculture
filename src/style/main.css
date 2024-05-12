@@ -569,6 +569,10 @@
   border-radius: 50%;
   border: 4px solid #1e1020;
 }
+.ProfilePage .profileInfoHolder label {
+  display: flex;
+  justify-content: center;
+}
 .ProfilePage .profileInfoHolder .userNameInIcon {
   margin: 0 auto;
   margin-top: 0;
@@ -739,7 +743,7 @@
   border: none;
   background-color: #1e1020;
   color: #c4ffb0;
-  font-size: 1.3em;
+  font-size: 1em;
   padding: 0.5em 1em;
   border: 3px solid #1e1020;
   margin: 0.5em 0.5em;
@@ -1345,6 +1349,399 @@
   border: none;
   margin-top: 1em;
   cursor: pointer;
+}
+
+.calendarPage {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  display: flex;
+  -moz-column-gap: 18px;
+       column-gap: 18px;
+  padding: 1em;
+  scrollbar-width: 0px;
+}
+.calendarPage::-webkit-scrollbar {
+  display: none;
+}
+.calendarPage .createEventSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.calendarPage .createEventSection > h1 {
+  background-color: #c4ffb0;
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  border: 3px solid #1e1020;
+}
+.calendarPage .createEventSection .c {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 1em;
+  border: 3px solid #1e1020;
+  padding-bottom: 1.5em;
+  padding-top: 1.5em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+.calendarPage .createEventSection > div {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5em;
+}
+.calendarPage .createEventSection > div input, .calendarPage .createEventSection > div textarea {
+  flex-grow: 1;
+  border: 3px solid #1e1020;
+  padding: 1em 1em;
+  border-radius: 10px;
+}
+.calendarPage .createEventSection > div textarea {
+  min-height: 150px;
+}
+.calendarPage .createEventSection > button {
+  width: 100%;
+  background-color: #c4ffb0;
+  max-width: 500px;
+  outline: none;
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+  border: 3px solid #1e1020;
+  font-size: 1em;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+}
+.calendarPage .EventsHolder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.calendarPage .EventsHolder > h1 {
+  background-color: #1e1020;
+  color: #c4ffb0;
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  border: 3px solid #c4ffb0;
+}
+.calendarPage .EventsHolder .btnsHolder {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.calendarPage .EventsHolder .btnsHolder button {
+  flex-grow: 1;
+  outline: none;
+  font-size: 1em;
+  border: none;
+  background-color: #1e1020;
+  color: #c4ffb0;
+  padding: 0.7em 1em;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.calendarPage .EventsHolder .btnsHolder .selected {
+  background-color: #c4ffb0;
+  color: #1e1020;
+}
+.calendarPage .EventsHolder ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+  list-style: none;
+  width: 100%;
+  max-width: 500px;
+  overflow-y: scroll;
+  min-height: 650px;
+  scrollbar-width: 0px;
+}
+.calendarPage .EventsHolder ul::-webkit-scrollbar {
+  display: none;
+}
+.calendarPage .EventsHolder ul li {
+  background-color: #1e1020;
+  margin: 0.5em 0;
+  color: white;
+  width: 100%;
+  padding: 1em;
+  border-radius: 10px;
+}
+.calendarPage .EventsHolder ul li .eventCardHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+.calendarPage .EventsHolder ul li .eventCardHeader span svg {
+  font-size: 1.5em;
+}
+.calendarPage .EventsHolder ul li h3 {
+  border-top: 1px solid white;
+  padding-top: 1.3em;
+  margin-top: 0.4em;
+  text-align: center;
+}
+.calendarPage .EventsHolder ul li .note {
+  width: 100%;
+  text-align: justify;
+  margin-bottom: 1.5em;
+  line-height: 1.5em;
+}
+.calendarPage .EventsHolder ul li .note span {
+  font-size: 1.1em;
+}
+.calendarPage .EventsHolder ul li .btnsHolder {
+  width: 100%;
+  display: flex;
+}
+.calendarPage .EventsHolder ul li .btnsHolder button {
+  flex-grow: 1;
+  background-color: #c4ffb0;
+  color: #1e1020;
+}
+.calendarPage .EventsHolder ul li .EventeditHolder {
+  display: flex;
+  flex-direction: column;
+}
+.calendarPage .EventsHolder ul li .EventeditHolder input, .calendarPage .EventsHolder ul li .EventeditHolder textarea {
+  outline: none;
+  border: none;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  resize: none;
+}
+.calendarPage .EventsHolder ul li .EventeditHolder textarea {
+  min-height: 150px;
+  margin-top: 0;
+}
+
+.statPage {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: 0px;
+  font-size: 0.9em;
+  padding: 1em;
+}
+.statPage::-webkit-scrollbar {
+  display: none;
+}
+.statPage .statTitle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  background-color: #1e1020;
+  color: #c4ffb0;
+  margin: 0;
+  border-radius: 10px;
+  padding: 0.5em;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.statPage .statTitle svg {
+  font-size: 1.2em;
+}
+.statPage .FinHolder {
+  width: 100%;
+  margin-top: 0.5em;
+}
+.statPage .FinHolder h3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  font-size: 1.4em;
+  color: #1e1020;
+}
+.statPage .FinHolder h3 svg {
+  font-size: 1.2em;
+}
+.statPage .FinHolder div {
+  width: 100%;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.statPage .FinHolder div p {
+  overflow: hidden;
+  flex-grow: 1;
+  background-color: #c4ffb0;
+  display: flex;
+  flex-direction: column;
+  height: 210px;
+  font-size: 1.2em;
+  position: relative;
+  margin-top: 0;
+  padding: 1em;
+  min-width: 400px;
+  max-width: 300px;
+  border-radius: 10px;
+}
+.statPage .FinHolder div p span {
+  display: flex;
+  align-items: center;
+}
+.statPage .FinHolder div p span:nth-child(1) {
+  font-size: 1.5em;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.statPage .FinHolder div p span:nth-child(1) svg {
+  background-color: #1e1020;
+  color: white;
+  padding: 0.2em;
+  border-radius: 5px;
+  font-size: 1.7em;
+}
+.statPage .FinHolder div p span:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.9em;
+  font-size: 1.5em;
+}
+.statPage .FinHolder div p:nth-child(2) {
+  background-color: #dc3546;
+}
+.statPage .FinHolder div a {
+  text-decoration: none;
+  color: #c4ffb0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  background-color: #1e1020;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 0.5em;
+}
+.statPage .FinHolder > p {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  color: #1e1020;
+  text-transform: capitalize;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  margin-top: 0;
+  border-radius: 10px;
+  padding: 0.5em;
+  background-color: #c4ffb0;
+}
+.statPage .FinHolder > p svg {
+  font-size: 1.2em;
+}
+.statPage .FinHolder .losing {
+  background-color: #dc3546;
+}
+.statPage .bottomStatsHolder {
+  width: 100%;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.statPage .bottomStatsHolder .stockStatHolder {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.statPage .bottomStatsHolder .stockStatHolder h3 {
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  background-color: #1e1020;
+  width: 100%;
+  color: white;
+  margin-top: 0;
+  padding: 0.5em;
+  border-radius: 10px;
+  justify-content: center;
+}
+.statPage .bottomStatsHolder .stockStatHolder div {
+  max-width: 500px;
+  width: 100%;
+}
+.statPage .bottomStatsHolder .eventStatHolder {
+  width: 300px;
+}
+.statPage .bottomStatsHolder .eventStatHolder p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  background-color: #c4ffb0;
+  border-radius: 10px;
+  padding: 0.2em;
+  text-transform: capitalize;
+}
+.statPage .bottomStatsHolder .eventStatHolder h3 {
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  background-color: #1e1020;
+  max-width: 500px;
+  width: 100%;
+  color: white;
+  margin-top: 0;
+  padding: 0.5em;
+  border-radius: 10px;
+  justify-content: center;
+  margin-bottom: 0.1em;
+}
+.statPage .bottomStatsHolder .eventStatHolder .eventCardsHolder {
+  width: 100%;
+  min-height: 300px;
+  overflow-y: scroll;
+  padding: 0.5em 0;
+  scrollbar-width: 0px;
+}
+.statPage .bottomStatsHolder .eventStatHolder .eventCardsHolder::-webkit-scrollbar {
+  display: none;
+}
+.statPage .bottomStatsHolder .eventStatHolder .eventCardsHolder a {
+  text-decoration: none;
+  background-color: #1e1020;
+  color: #c4ffb0;
+  flex-grow: 1;
+  border-radius: 10px;
+  padding: 0.8em 0.5em;
+  display: block;
+  text-transform: capitalize;
+  text-align: center;
+  width: 100%;
+  margin: 0.5em 0;
+}
+
+.adminDash {
+  width: 100%;
+  height: 100vh;
+  display: flex;
 }
 
 html {

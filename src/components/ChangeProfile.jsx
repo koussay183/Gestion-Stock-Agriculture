@@ -85,33 +85,33 @@ function ChangeProfile() {
                 <div>
                     <div>
                         <label>Full Name</label>
-                        <input type="text" placeholder={userData?.fullName} id='fullName' onChange={handleInputChange} />
+                        <input type="text" required value={userData?.fullName} id='fullName' onChange={handleInputChange} />
                     </div>
                     
                 </div>
                 <div>
                 <div>
                         <label>Phone Number</label>
-                        <input type="text" placeholder={userData?.phoneNumber} id='phoneNumber' onChange={handleInputChange} />
+                        <input type="text" required value={userData?.phoneNumber} id='phoneNumber' onChange={handleInputChange} />
                     </div>
                 </div>
                 <div>
                 <div>
                         <label>Country</label>
-                        <input type="text" placeholder={userData?.pays} id='pays' onChange={handleInputChange} />
+                        <input type="text" required value={userData?.pays} id='pays' onChange={handleInputChange} />
                     </div>
                 </div>
                 <div>
                     
                     <div>
                         <label>City</label>
-                        <input type="text" placeholder={userData?.ville} id='ville' onChange={handleInputChange} />
+                        <input type="text" required value={userData?.ville} id='ville' onChange={handleInputChange} />
                     </div>
                 </div>
                 <div>
                 <div>
                     <label>Devise</label>
-                    <input type="text" placeholder={userData?.devise} id='devise' onChange={handleInputChange} />
+                    <input type="text" required value={userData?.devise} id='devise' onChange={handleInputChange} />
                 </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@ import SideBar from "./components/SideBar";
 import Home from "./components/Home";
 
 import AdminLogin from "./Admin/AdminLogin"
-
+import bcrypt from 'bcryptjs';
 import { AuthProvider } from "./contexts/authContext";
 import { BrowserRouter as Router, Routes, Route, Outlet , Navigate } from 'react-router-dom';
 import { useAuth } from './contexts/authContext'
@@ -20,6 +20,13 @@ import Transactions from "./components/Transactions";
 import Buy from "./components/Buy";
 import Sell from "./components/Sell";
 import TransHistory from "./components/TransHistory"
+import MyCalendar from "./components/Calendar";
+import Statistics from "./components/Statistics";
+import { useEffect, useState } from "react";
+import AdminSideBar from "./Admin/AdminSideBar";
+import Users from "./Admin/Users";
+
+
 function UserPrivateRoutes() {
   const { userLoggedIn } = useAuth();
   return userLoggedIn ? (
@@ -30,19 +37,44 @@ function UserPrivateRoutes() {
   ) : (<Navigate to="/login" replace={true}/>)
 }
 
+function AdminPrivateRoutes() {
+  
+  useEffect(() => {
+    const getAuth = async () => {
+      const encryptedPassword = localStorage.getItem('adminPassword');
+      const decryptedPassword = process.env.REACT_APP_ADMIN_PASSWORD;
+      const isValidPassword = await bcrypt.compare(decryptedPassword, encryptedPassword);
+      localStorage.setItem("adminAuth",isValidPassword)
+    }
+    getAuth()
+  }, [])
+  
+  return localStorage.getItem("adminAuth") === true ||localStorage.getItem("adminAuth") === "true"   ? (
+    <div className="adminDash">
+      <AdminSideBar/>
+      <Outlet></Outlet>
+    </div>
+  ) : (<Navigate to="/admin/login" replace={true}/>)
+}
+
 function App() {
 
   return (
     <AuthProvider>
       <Router>
         <Routes>
+          {/* Admin Private Routes */}
+          <Route path="/owner" element={<AdminPrivateRoutes/>}>
+            <Route path="users" element={<Users/>}/>
+            <Route path="stats" element={<h1>Stats</h1>}/>
+            <Route path="requests" element={<h1>requests</h1>}/>
+          </Route>  
           {/* Admin Public Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
 
           {/* User Private Routes */}
           <Route path="/dashboard" element={<UserPrivateRoutes />} >
-            <Route path="*" index element={<h1>Statics Page</h1>}/>
-
+            
             <Route path="profile"  element={<Profile/>}/>
             <Route path="chnage-password"  element={<ChnagePassword/>}/>
             <Route path="chnage-profile"  element={<ChangeProfile/>}/>
@@ -55,15 +87,21 @@ function App() {
               <Route path="sell"  element={<Sell/>}/>
               <Route index path="*"  element={<TransHistory/>}/>
             </Route>
+
+            <Route path="calendar" element={<MyCalendar/>}/>
             <Route path="help" element={<Help/>} />
+
+            <Route path="*" index element={<Statistics/>}/>
           </Route>
 
           {/* User Public Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+
           {/* Define a default route */}
           <Route path="*" element={<Home />} />
+
         </Routes>
       </Router>
     </AuthProvider>

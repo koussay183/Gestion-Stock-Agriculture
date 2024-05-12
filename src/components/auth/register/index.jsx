@@ -58,10 +58,11 @@ const Register = () => {
                                     Email
                                 </label>
                                 <input
+                                    required
                                     type="email"
                                     autoComplete='email'
                                     placeholder='Email'
-                                    required
+                                    
                                     value={email} onChange={(e) => { setEmail(e.target.value) }}
                                     className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:indigo-600 shadow-sm rounded-lg transition duration-300"
                                 />
@@ -71,11 +72,12 @@ const Register = () => {
                                     Full Name
                                 </label>
                                 <input
+                                    required
                                     disabled={isRegistering}
                                     type="text"
                                     autoComplete='off'
                                     placeholder='Full Name'
-                                    required
+                                    
                                     value={fullName} onChange={(e) => { setfullName(e.target.value) }}
                                     className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
                                 />
@@ -89,10 +91,11 @@ const Register = () => {
                                     Password
                                 </label>
                                 <input
+                                    required
                                     disabled={isRegistering}
                                     type="password"
                                     autoComplete='new-password'
-                                    required
+                                    
                                     placeholder='Password'
                                     value={password} onChange={(e) => { setPassword(e.target.value) }}
                                     className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
@@ -103,11 +106,12 @@ const Register = () => {
                                     Confirm Password
                                 </label>
                                 <input
+                                    required
                                     disabled={isRegistering}
                                     type="password"
                                     autoComplete='off'
                                     placeholder='Confirm Password'
-                                    required
+                                    
                                     value={confirmPassword} onChange={(e) => { setconfirmPassword(e.target.value) }}
                                     className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
                                 />
@@ -121,10 +125,11 @@ const Register = () => {
                                     City
                                 </label>
                                 <input
+                                    required
                                     disabled={isRegistering}
                                     type="text"
                                     autoComplete='off'
-                                    required
+                                    
                                     placeholder='City'
                                     value={ville} onChange={(e) => { setville(e.target.value) }}
                                     className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
@@ -136,11 +141,12 @@ const Register = () => {
                                     Country
                                 </label>
                                 <input
+                                    required
                                     disabled={isRegistering}
                                     type="text"
                                     autoComplete='off'
                                     placeholder='Country'
-                                    required
+                                    
                                     value={pays} onChange={(e) => { setpays(e.target.value) }}
                                     className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
                                 />
@@ -152,10 +158,11 @@ const Register = () => {
                                 Currency
                             </label>
                             <input
+                                required
                                 disabled={isRegistering}
                                 type="text"
                                 autoComplete='off'
-                                required
+                                
                                 placeholder='Currency'
                                 value={devise} onChange={(e) => { setdevise(e.target.value) }}
                                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
