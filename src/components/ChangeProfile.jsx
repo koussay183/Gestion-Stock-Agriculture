@@ -6,8 +6,9 @@ import { firestore } from '../firebase/firebase';
 import { useAuth } from '../contexts/authContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { MdPublishedWithChanges } from "react-icons/md";
+
 function ChangeProfile() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const { currentUser } = useAuth();
     const [userData, setUserData] = useState({});
     const [editedData, setEditedData] = useState({
@@ -24,7 +25,16 @@ function ChangeProfile() {
                 const userDocRef = doc(firestore, "users", currentUser?.uid);
                 const docSnap = await getDoc(userDocRef);
                 if (docSnap.exists()) {
-                    setUserData(docSnap.data());
+                    const userData = docSnap.data();
+                    setUserData(userData);
+                    // Initialize editedData with userData values
+                    setEditedData({
+                        fullName: userData.fullName,
+                        phoneNumber: userData.phoneNumber,
+                        pays: userData.pays,
+                        ville: userData.ville,
+                        devise: userData.devise
+                    });
                 } else {
                     console.log("No such document!");
                 }
@@ -55,7 +65,7 @@ function ChangeProfile() {
 
             await updateDoc(userDocRef, dataToUpdate);
             toast.success('Profile updated successfully');
-            navigate("/dashboard/profile")
+            navigate("/dashboard/profile");
             
         } catch (error) {
             console.error('Error updating profile: ', error);
@@ -85,33 +95,33 @@ function ChangeProfile() {
                 <div>
                     <div>
                         <label>Full Name</label>
-                        <input type="text" required value={userData?.fullName} id='fullName' onChange={handleInputChange} />
+                        <input type="text" required value={editedData?.fullName} id='fullName' onChange={handleInputChange} />
                     </div>
                     
                 </div>
                 <div>
                 <div>
                         <label>Phone Number</label>
-                        <input type="text" required value={userData?.phoneNumber} id='phoneNumber' onChange={handleInputChange} />
+                        <input type="text" required value={editedData?.phoneNumber} id='phoneNumber' onChange={handleInputChange} />
                     </div>
                 </div>
                 <div>
                 <div>
                         <label>Country</label>
-                        <input type="text" required value={userData?.pays} id='pays' onChange={handleInputChange} />
+                        <input type="text" required value={editedData?.pays} id='pays' onChange={handleInputChange} />
                     </div>
                 </div>
                 <div>
                     
                     <div>
                         <label>City</label>
-                        <input type="text" required value={userData?.ville} id='ville' onChange={handleInputChange} />
+                        <input type="text" required value={editedData?.ville} id='ville' onChange={handleInputChange} />
                     </div>
                 </div>
                 <div>
                 <div>
                     <label>Devise</label>
-                    <input type="text" required value={userData?.devise} id='devise' onChange={handleInputChange} />
+                    <input type="text" required value={editedData?.devise} id='devise' onChange={handleInputChange} />
                 </div>
                 </div>
             </div>
