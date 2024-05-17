@@ -1745,6 +1745,301 @@
   display: flex;
 }
 
+.stats-admin {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: 0px;
+  padding: 1em;
+}
+.stats-admin::-webkit-scrollbar {
+  display: none;
+}
+.stats-admin > h2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1e1020;
+  padding: 0.5em;
+  border-radius: 10px;
+  color: #c4ffb0;
+  margin-top: 0;
+}
+.stats-admin > h2 svg {
+  font-size: 1.5em;
+  margin-right: 0.1em;
+}
+.stats-admin .cards-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 10px;
+  flex-wrap: wrap;
+}
+.stats-admin .cards-container .card {
+  flex-grow: 1;
+  border-radius: 10px;
+  padding: 1em;
+  background-color: #c4ffb0;
+  position: relative;
+  overflow: hidden;
+  min-height: 167px;
+  min-width: 250px;
+}
+.stats-admin .cards-container .card h3 {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+.stats-admin .cards-container .card h3 svg {
+  background-color: #1e1020;
+  color: white;
+  padding: 0.3em;
+  border-radius: 5px;
+  margin-right: 0.2em;
+  width: 35px;
+  height: 35px;
+}
+.stats-admin .cards-container .card p {
+  font-size: 1.5em;
+  text-align: center;
+}
+.stats-admin .cards-container .card a, .stats-admin .cards-container .card span {
+  text-decoration: none;
+  color: #c4ffb0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  background-color: #1e1020;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 0.5em;
+}
+.stats-admin .cards-container .card span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.stats-admin .chart-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+.stats-admin .chart-container h4 {
+  font-size: 1.5em;
+  color: #1e1020;
+  margin-bottom: 0;
+}
+.stats-admin .chart-container canvas {
+  width: 100%;
+}
+
+.usersManagment {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.usersManagment > h2 {
+  background-color: #1e1020;
+  color: #c4ffb0;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 30px;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  margin-bottom: 4em;
+}
+.usersManagment table {
+  width: 100%;
+  max-width: 1050px;
+  border-radius: 20px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.usersManagment th,
+.usersManagment td {
+  padding: 15px;
+  background-color: #1e1020;
+  color: #fff;
+}
+.usersManagment td input {
+  width: 90px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5em;
+}
+.usersManagment td button {
+  background-color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 1em 2em;
+  margin: 0 0.2em;
+  font-size: 0.7em;
+  cursor: pointer;
+}
+.usersManagment th {
+  text-align: left;
+}
+.usersManagment thead th {
+  background-color: #c4ffb0;
+  color: #1e1020;
+}
+.usersManagment tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.usersManagment tbody td {
+  position: relative;
+}
+.usersManagment tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+
+.requests {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: 0px;
+}
+.requests::-webkit-scrollbar {
+  display: none;
+}
+.requests > h2 {
+  background-color: #1e1020;
+  color: #c4ffb0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 30px;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  margin-bottom: 3em;
+  margin-top: 1em;
+}
+.requests .requestCardsHolder {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.requests .requestCardsHolder .request-card {
+  width: 100%;
+  background-color: #1e1020;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  max-width: 300px;
+  flex-grow: 1;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.requests .requestCardsHolder .request-card .email, .requests .requestCardsHolder .request-card .phone {
+  width: 100%;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  display: flex;
+  align-items: center;
+}
+.requests .requestCardsHolder .request-card .email svg, .requests .requestCardsHolder .request-card .phone svg {
+  background-color: #c4ffb0;
+  color: #1e1020;
+  border-radius: 5px;
+  padding: 0.3em;
+  width: 25px;
+  height: 25px;
+}
+.requests .requestCardsHolder .request-card .message, .requests .requestCardsHolder .request-card .name {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.requests .requestCardsHolder .request-card .message span, .requests .requestCardsHolder .request-card .name span {
+  width: 100%;
+  background-color: #c4ffb0;
+  border-radius: 5px;
+  color: #1e1020;
+  padding: 0.4em;
+  font-size: 0.9em;
+  text-align: center;
+  margin-bottom: 0.2em;
+}
+.requests .requestCardsHolder .request-card .name {
+  text-transform: capitalize;
+}
+.requests .requestCardsHolder .request-card .message span {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.requests .requestCardsHolder .request-card .message label {
+  padding: 0.5em;
+  background-color: white;
+  border-radius: 10px;
+  color: #1e1020;
+  text-align: start;
+  min-height: 100px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.requests .requestCardsHolder .request-card .status {
+  width: 150px;
+  padding: 0.3em;
+  background-color: #DC3545;
+  text-align: center;
+  margin: 1em auto;
+  border-radius: 15px;
+}
+.requests .requestCardsHolder .request-card .replayed {
+  background-color: #c4ffb0;
+  color: #1e1020;
+}
+.requests .requestCardsHolder .request-card .innerRequestCardBtnHolder {
+  width: 100%;
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.requests .requestCardsHolder .request-card .innerRequestCardBtnHolder button {
+  flex-grow: 1;
+  border: 0;
+  outline: none;
+  padding: 0.5em;
+  border-radius: 7px;
+  background-color: #c4ffb0;
+  cursor: pointer;
+}
+.requests .requestCardsHolder .request-card .innerRequestCardBtnHolder .delete-btn {
+  background-color: #DC3545;
+  color: white;
+}
+
 html {
   scroll-behavior: smooth;
 }

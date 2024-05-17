@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { collection, getDocs, deleteDoc, doc , query , where} from 'firebase/firestore';
 import { ref, deleteObject , getDownloadURL } from 'firebase/storage';
 import { firestore, storage } from '../firebase/firebase'; // Assuming you have exported firestore and storage from firebaseConfig.js
+import { FaSearch, FaUsersCog } from "react-icons/fa";
+import Loader from "../components/Loader"
 const Users = () => {
     const [users, setUsers] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
-  
+    const [loading, setloading] = useState(true)
     useEffect(() => {
       const fetchUsers = async () => {
         try {
@@ -15,6 +17,7 @@ const Users = () => {
         } catch (error) {
           console.error('Error fetching users:', error);
         }
+        setloading(false)
         console.log(users);
       };
       
@@ -92,21 +95,33 @@ const Users = () => {
     console.log('Filtered users:', filteredUsers);
   
     return (
-      <div>
-        <h2>Users Management</h2>
-        <input
-          type="text"
-          placeholder="Search users..."
-          value={searchTerm}
-          onChange={handleSearch}
-        />
+      <div className='usersManagment'>
+        {loading && <Loader/>}
+        <h2><FaUsersCog></FaUsersCog>Users Management</h2>
+
+        <div className='searchBarHolderInStock'>
+            <input
+              type="text"
+              placeholder="Search users..."
+              value={searchTerm}
+              onChange={handleSearch}
+              style={{backgroundColor : "transparent"}}
+            />
+            <label><FaSearch/></label>
+        </div>
+
+        <span className='shades' id='shade1'></span>
+        <span className='shades' id='shade2'></span>
+
         <table>
           <thead>
             <tr>
               <th>ID</th>
               <th>Name</th>
               <th>Devise</th>
-              <th>Action</th>
+              <th>Pays</th>
+              <th>Ville</th>
+              <th style={{textAlign : "center"}}>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -115,8 +130,10 @@ const Users = () => {
                 <td>{user.id}</td>
                 <td>{user.fullName}</td>
                 <td>{user.devise}</td>
-                <td>
-                  <button onClick={() => handleDeleteUser(user.id)}>Reset</button>
+                <td>{user.pays}</td>
+                <td>{user.ville}</td>
+                <td style={{display : "flex" , justifyContent : 'center'}}>
+                  <button style={{backgroundColor : '#DC3545',color : "white"}} onClick={() => handleDeleteUser(user.id)}>Reset</button>
                 </td>
               </tr>
             ))}

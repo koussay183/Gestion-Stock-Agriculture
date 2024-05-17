@@ -25,6 +25,8 @@ import Statistics from "./components/Statistics";
 import { useEffect, useState } from "react";
 import AdminSideBar from "./Admin/AdminSideBar";
 import Users from "./Admin/Users";
+import Requests from "./Admin/Requests";
+import StatsAdmin from "./Admin/AdminStats";
 
 
 function UserPrivateRoutes() {
@@ -66,8 +68,8 @@ function App() {
           {/* Admin Private Routes */}
           <Route path="/owner" element={<AdminPrivateRoutes/>}>
             <Route path="users" element={<Users/>}/>
-            <Route path="stats" element={<h1>Stats</h1>}/>
-            <Route path="requests" element={<h1>requests</h1>}/>
+            <Route path="stats" element={<StatsAdmin/>}/>
+            <Route path="requests" element={<Requests/>}/>
           </Route>  
           {/* Admin Public Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />

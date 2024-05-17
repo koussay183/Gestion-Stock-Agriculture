@@ -2,13 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { firestore } from '../firebase/firebase';
 import { useAuth } from '../contexts/authContext';
+
 import Chart from 'chart.js/auto';
+
 import { MdOutlineInsights } from 'react-icons/md';
 import { IoHappyOutline , IoSadOutline  } from "react-icons/io5";
 import { GiReceiveMoney ,GiPayMoney } from "react-icons/gi";
 import { CiBoxes } from "react-icons/ci";
 import { Link } from 'react-router-dom';
 import Loader from "./Loader"
+
 function Statistics() {
   const { currentUser } = useAuth();
   const [totalIncome, setTotalIncome] = useState(0);
